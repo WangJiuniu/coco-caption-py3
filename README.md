@@ -1,11 +1,13 @@
 Microsoft COCO Caption Evaluation
 ===================
 
-Evaluation codes for MS COCO caption generation.
+Evaluation codes for MS COCO caption generation. 
+
+Forked from [coco-caption](https://github.com/tylin/coco-caption) (Python 2.7), transfered to Python 3.6 compatible by He Huang (University of Illinois at Chicago).
 
 ## Requirements ##
 - java 1.8.0
-- python 2.7
+- python 3.6
 
 ## Files ##
 ./

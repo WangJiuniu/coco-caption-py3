@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # 
 # File Name : ptbtokenizer.py
 #
@@ -35,6 +34,7 @@ class PTBTokenizer:
         final_tokenized_captions_for_image = {}
         image_id = [k for k, v in captions_for_image.items() for _ in range(len(v))]
         sentences = '\n'.join([c['caption'].replace('\n', ' ') for k, v in captions_for_image.items() for c in v])
+        sentences = sentences.encode('utf-8')
 
         # ======================================================
         # save sentences to temporary file
@@ -51,6 +51,7 @@ class PTBTokenizer:
         p_tokenizer = subprocess.Popen(cmd, cwd=path_to_jar_dirname, \
                 stdout=subprocess.PIPE)
         token_lines = p_tokenizer.communicate(input=sentences.rstrip())[0]
+        token_lines = token_lines.decode('utf-8')
         lines = token_lines.split('\n')
         # remove temp file
         os.remove(tmp_file.name)
